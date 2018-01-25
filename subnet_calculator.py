@@ -1,6 +1,12 @@
+ip = input("ENTER IP > ").strip().split(".")
+input_ip =[]
+for oct in ip:
+    input_ip.append(int(oct))
 
-input_ip = [10, 1, 1, 1]
-input_mask = [255, 255, 255, 0]
+mask = input("ENTER MASK > ").strip().split(".")
+input_mask =[]
+for oct in mask:
+    input_mask.append(int(oct))
 
 def network_id(ip, mask):
     id = []
@@ -73,9 +79,9 @@ def number_of_ips(wildcard):
 
 
 
-print(number_of_ips(wildcard(input_mask)))
-print(last_ip(broadcast(network_id(input_ip, input_mask), wildcard(input_mask))))
-print(broadcast(network_id(input_ip, input_mask), wildcard(input_mask)))
-print(wildcard(input_mask))
-print(network_id(input_ip, input_mask))
-print(first_ip(network_id(input_ip, input_mask)))
+print("NETWORK ID:      -   {}".format(network_id(input_ip, input_mask)))
+print("BROADCAST:       -   {}".format(broadcast(network_id(input_ip, input_mask), wildcard(input_mask))))
+print("FIRST ADDRESS:   -   {}".format(first_ip(network_id(input_ip, input_mask))))
+print("LAST ADDRESS:    -   {}".format(last_ip(broadcast(network_id(input_ip, input_mask), wildcard(input_mask)))))
+print("WILDCARD:        -   {}".format(wildcard(input_mask)))
+print("NUMBER OF HOSTS: -   {}".format(number_of_ips(wildcard(input_mask))))
