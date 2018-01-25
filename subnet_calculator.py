@@ -8,6 +8,8 @@ input_mask =[]
 for oct in mask:
     input_mask.append(int(oct))
 
+
+
 def network_id(ip, mask):
     id = []
     iterator = 0
@@ -85,3 +87,5 @@ print("FIRST ADDRESS:   -   {}".format(first_ip(network_id(input_ip, input_mask)
 print("LAST ADDRESS:    -   {}".format(last_ip(broadcast(network_id(input_ip, input_mask), wildcard(input_mask)))))
 print("WILDCARD:        -   {}".format(wildcard(input_mask)))
 print("NUMBER OF HOSTS: -   {}".format(number_of_ips(wildcard(input_mask))))
+
+input()
